@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('r_d_v_s', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->integer('durée');
-            $table->string('statut');
-            $table->string('motif');
+            $table->date('date_rdv');
+            $table->time('heure_rdv');
+            $table->string('statut')->default('En attente');
+            $table->string('motif')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('medecin_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

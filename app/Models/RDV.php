@@ -11,15 +11,19 @@ class RDV extends Model
     use HasFactory;
 
     protected $fillable = [
-        'date',
-        'durée',
+        'date_rdv',
+        'heure_rdv',
         'statut',
         'motif',
         'user_id',
+        'medecin_id'
     ];
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+   
+    public function patient() {
+    return $this->belongsTo(User::class, 'user_id');
+}
 
+public function medecin() {
+    return $this->belongsTo(User::class, 'medecin_id');
+}
 }

@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'role',
+        'specialite',
         'email',
         'telephone',
         'password',
@@ -53,8 +54,29 @@ class User extends Authenticatable
         return $this->hasMany(Disponibilite::class);
     }
 
-    public function RDV()
-    {
-        return $this->hasMany(RDV::class);
-    }
+    
+
+    public static function listSpecialites()
+{
+    return [
+        'Generaliste' => 'Médecin Généraliste',
+        'Cardiologue' => 'Cardiologue',
+        'Pediatre'    => 'Pédiatre',
+        'Gynecologue' => 'Gynécologue',
+        'Dentiste'    => 'Dentiste',
+    ];
 }
+
+public function rdvsPris()
+{
+    return $this->hasMany(RDV::class, 'user_id');
+}
+
+// Les rendez-vous que l'utilisateur doit honorer (en tant que MÉDECIN)
+public function rdvsRecus()
+{
+    return $this->hasMany(RDV::class, 'medecin_id');
+}
+
+}
+

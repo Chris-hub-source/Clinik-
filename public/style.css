@@ -1,0 +1,358 @@
+:root {
+    --docto-blue: #0596de;
+    --docto-dark: #00263e;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+.hero {
+    background-color: var(--docto-blue);
+    height: 80vh;
+    /* Hauteur de la section bleue */
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin: 2px;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 200px;
+    width: auto;
+    display: block;
+}
+
+.auth {
+    display: flex;
+    gap: 15px;
+    /* Espace entre les boutons */
+    align-items: center;
+}
+
+.auth a,
+.btn-logout {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 18px;
+    border-radius: 8px;
+    /* Coins arrondis */
+    transition: all 0.3s ease;
+}
+
+
+.auth a[href*="login"],
+.auth a[href*="register"] {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.auth a[href*="login"]:hover,
+.auth a[href*="register"]:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+
+.presentation {
+    margin-top: 20px;
+    margin-left: 30px;
+    max-width: 650px;
+}
+
+.presentation h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.presentation h1 span {
+    background-color: #003a8c;
+    /* L'effet de surlignage bleu foncé */
+    padding: 0 10px;
+}
+
+.presentation p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.presentation a[role="button"] {
+    background-color: white;
+    color: #00263e;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.presentation a[role="button"]:hover {
+    background-color: #f0f0f0;
+}
+
+.hero-body {
+    display: flex;
+    /* Aligne le texte et l'image côte à côte */
+    justify-content: space-between;
+    align-items: center;
+    height: calc(80vh - 50px);
+    /* Ajuste la hauteur en fonction de la navbar */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    /* Pousse l'image tout à droite */
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section des services */
+.services-section {
+    padding: 80px 50px;
+    background-color: white;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    flex: 1;
+    text-align: center;
+}
+
+/* Le conteneur de l'icône */
+.icon-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* La forme organique bleue derrière */
+.blob-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.2; /* Très léger comme sur ton image */
+    /* Forme irrégulière */
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+}
+
+.color-1 { background-color: #0596de; transform: rotate(10deg); }
+.color-2 { background-color: #f39c12; border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; }
+.color-3 { background-color: #0596de; transform: rotate(-15deg); }
+
+.icon-wrapper img {
+    position: relative;
+    z-index: 2;
+    width: 60px; /* Taille de tes icônes */
+    height: auto;
+}
+
+.service-card h3 {
+    color: #00263e;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/*section équipe médicale*/
+.equipe {
+    padding: 80px 50px;
+    background-color: #f8f9fa; /* Un gris très clair pour faire ressortir les cartes blanches */
+    text-align: center;
+}
+
+.equipe-header {
+    margin-bottom: 50px;
+}
+
+.equipe-header h2 {
+    color: #00263e;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.equipe-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden; /* Pour que l'image respecte l'arrondi de la carte */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.equipe-img {
+    height: 300px;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+.equipe-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image remplit le cadre sans se déformer */
+}
+
+/* Zone de texte */
+.equipe-info {
+    padding: 20px;
+}
+
+.equipe-info h3 {
+    margin: 0;
+    color: #00263e;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.specialite {
+    margin-top: 5px;
+    color: #0596de; /* Le bleu de ton thème */
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/*footer*/
+.main-footer {
+    background-color: #00263e;
+    color: white;
+    padding: 30px 0 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* La 1ère colonne est plus large */
+    gap: 30px;
+    padding: 0 50px;
+}
+
+.footer-col h4 {
+    color: #0596de;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Petit trait sous le titre */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background-color: #0596de;
+}
+
+.footer-col p {
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    color: #0596de;
+    padding-left: 5px;
+}
+
+/* Section Contact */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-item .icon {
+    font-size: 1.2rem;
+}
+
+/* Copyright */
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-logo span {
+    font-weight: 300;
+}
+
+
+

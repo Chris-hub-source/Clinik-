@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Disponibilite;
+
 
 class DisponibiliteController extends Controller
 {
@@ -12,6 +14,8 @@ class DisponibiliteController extends Controller
     public function index()
     {
         //
+        $disponibilites = Disponibilite::all();
+        return view('disponibilites.index', compact('disponibilites'));
     }
 
     /**
@@ -28,6 +32,19 @@ class DisponibiliteController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'date' => 'required|date',
+            'heure_debut' => 'required|integer|min:0|max:23',
+            'heure_fin' => 'required|integer|min:0|max:23|gt:heure_debut',
+            'user_id' => 'required|exists:users,id',
+        ]);
+
+        Disponibilite::create([
+            'date' => $request->date,
+            'heure_debut' => $request->heure_debut,
+            'heure_fin' => $request->heure_fin,
+            'user_id' => $request->user_id,
+        ]);
     }
 
     /**
@@ -52,6 +69,9 @@ class DisponibiliteController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $disponibilite = Disponibilite::findOrFail($id);
+        $disponibilite->update($request->all());
+        return redirect()->back()->with('success', 'Disponibilité mise à jour avec succès.');
     }
 
     /**
@@ -60,5 +80,8 @@ class DisponibiliteController extends Controller
     public function destroy(string $id)
     {
         //
+        $disponibilite = Disponibilite::findOrFail($id);
+        $disponibilite->delete();
+        return redirect()->back()->with('success', 'Disponibilité supprimée avec succès.');
     }
 }

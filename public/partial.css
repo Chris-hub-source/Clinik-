@@ -1,0 +1,185 @@
+/* Style des Cartes (Cards) */
+.card {
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    transition: transform 0.2s ease;
+}
+
+.card-header {
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding: 20px !important;
+    font-size: 1.1rem;
+    color: #00263e;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.card-body {
+    padding: 25px !important;
+}
+
+/* Style des Champs de saisie (Inputs) */
+.form-label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    border: 1.5px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #0596de;
+    box-shadow: 0 0 0 3px rgba(5, 150, 222, 0.1);
+    outline: none;
+}
+
+/* Style des Boutons */
+.btn-primary {
+    background-color: #0596de !important;
+    border: none !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%; /* Bouton pleine largeur pour mobile/petites cartes */
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #007bbd !important;
+    transform: translateY(-1px);
+}
+
+.btn-dark {
+    background-color: #00263e !important;
+    border: none !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-dark:hover {
+    background-color: #001a2b !important;
+}
+
+
+/* Style spécifique au formulaire de rendez-vous */
+.form-rdv {
+    border: none;
+    background-color: #ffffff;
+    padding: 30px !important;
+}
+
+/* Personnalisation des champs (Select, Date, Time, Textarea) */
+.form-rdv .form-control, 
+.form-rdv .form-select {
+    border: 1.5px solid #eef2f6;
+    background-color: #f8fbff; /* Bleu très pâle pour le confort visuel */
+    border-radius: 10px;
+    padding: 12px 15px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.form-rdv .form-control:focus {
+    border-color: #0596de;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(5, 150, 222, 0.1);
+    outline: none;
+}
+
+/* Style des étiquettes (Labels) */
+.form-rdv .form-label {
+    font-weight: 600;
+    color: #00263e;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Bouton de confirmation personnalisé */
+.btn-appointment {
+    background-color: #0596de !important;
+    border: none !important;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(5, 150, 222, 0.2);
+}
+
+.btn-appointment:hover {
+    background-color: #007bbd !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(5, 150, 222, 0.3);
+}
+
+/*Mes rdv*/
+.table-responsive {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+/* En-tête du tableau */
+.table thead th {
+    background-color: #f8fbff;
+    color: #00263e;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    padding: 15px;
+    border-top: none;
+    border-bottom: 2px solid #eef2f6;
+}
+
+/* Cellules du tableau */
+.table tbody td {
+    padding: 15px;
+    color: #555;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f1f4f8;
+}
+
+/* Effet de survol sur les lignes */
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f0f9ff; /* Bleu très clair au survol */
+}
+
+/* Style spécifique pour la date et l'heure */
+.td-date {
+    font-weight: 600;
+    color: #00263e;
+}
+
+.td-time {
+    color: #0596de;
+    font-weight: 500;
+}
+
+.td-doctor {
+    font-weight: 500;
+    color: #333;
+} 
